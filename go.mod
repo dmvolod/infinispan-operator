@@ -3,6 +3,7 @@ module github.com/infinispan/infinispan-operator
 go 1.13
 
 require (
+	github.com/GeertJohan/go.rice v1.0.2
 	github.com/go-logr/logr v0.1.0
 	github.com/go-openapi/spec v0.19.4
 	github.com/go-playground/validator/v10 v10.3.0
