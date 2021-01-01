@@ -1,17 +1,25 @@
 import * as React from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import {Link, NavLink, useHistory, useLocation,} from 'react-router-dom';
 import {
+  Brand,
   Nav,
-  NavList,
   NavItem,
-  NavExpandable,
+  NavList,
   Page,
   PageHeader,
   PageSidebar,
-  SkipToContent
+  SkipToContent,
+  Text,
+  TextContent,
+  TextVariants,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
+  NavExpandable,
 } from '@patternfly/react-core';
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
-import logo from '@app/bgimages/Patternfly-Logo.svg';
+import logo from '!!url-loader!@app/assets/brand.svg';
+import {global_spacer_sm} from "@patternfly/react-tokens";
 
 interface IAppLayout {
   children: React.ReactNode;
@@ -30,21 +38,35 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({children}) => {
   const onPageResize = (props: { mobileView: boolean; windowSize: number }) => {
     setIsMobileView(props.mobileView);
   };
+  const history = useHistory();
+  const logoProps = {
+    target: '_self',
+    onClick: () => history.push('/'),
+  };
 
-  function LogoImg() {
-    const history = useHistory();
-    function handleClick() {
-      history.push('/');
-    }
-    return (
-      <img src={logo} onClick={handleClick} alt="PatternFly Logo" />
-    );
-  }
+  const Logo = (
+    <Toolbar>
+      <ToolbarContent>
+        <ToolbarItem style={{ marginTop: global_spacer_sm.value }}>
+          <Link to={'/'}>
+            <Brand src={logo} alt="" width={150} />
+          </Link>
+        </ToolbarItem>
+        <ToolbarItem style={{ marginTop: 0 }}>
+          <TextContent>
+            <Text component={TextVariants.h2}>Operator Console</Text>
+          </TextContent>
+        </ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
 
   const Header = (
     <PageHeader
-      logo={<LogoImg />}
-      showNavToggle
+      logo={Logo}
+      logoComponent={'div'}
+      logoProps={logoProps}
+      showNavToggle={true}
       isNavOpen={isNavOpen}
       onNavToggle={isMobileView ? onNavToggleMobile : onNavToggle}
     />

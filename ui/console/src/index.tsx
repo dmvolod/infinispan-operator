@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from '@app/index';
+import i18n from "./i18n";
+
+console.info("supported languages", ...i18n.languages);
 
 if (process.env.NODE_ENV !== "production") {
   const config = {

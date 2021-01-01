@@ -1,0 +1,73 @@
+{
+  "common": {
+    "fullName": "{{givenName}} {{familyName}}",
+    "unknownUser": "Anonymous",
+
+    "add": "Add",
+    "yes": "Yes",
+    "no": "No",
+    "create": "Create",
+    "save": "Save",
+    "reload": "Reload",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "delete": "Delete",
+    "remove": "Remove",
+    "search": "Search",
+    "next": "Next",
+    "back": "Back",
+    "export": "Export",
+    "action": "Action",
+    "download": "Download",
+    "resourceFile": "Resource file",
+    "clearFile": "Clear this file",
+    "on": "On",
+    "off": "Off",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "disable": "Disable",
+    "selectOne": "Select an option",
+    "choose": "Choose...",
+    "signOut": "Sign out",
+    "manageAccount": "Manage account",
+    "serverInfo": "Server info",
+    "help": "Help",
+    "helpLabel": "More help for {{label}}",
+    "documentation": "Documentation",
+    "enableHelpMode": "Enable help mode",
+    "learnMore": "Learn more",
+
+    "home": "Home",
+    "manage": "Manage",
+    "clients": "Clients",
+    "clientScopes": "Client scopes",
+    "realmRoles": "Realm roles",
+    "users": "Users",
+    "groups": "Groups",
+    "sessions": "Sessions",
+    "events": "Events",
+
+    "configure": "Configure",
+    "realmSettings": "Realm settings",
+    "authentication": "Authentication",
+    "identityProviders": "Identity providers",
+    "userFederation": "User federation",
+
+    "settings": "Settings",
+
+    "required": "Required field",
+    "maxLength": "Max length {{length}}",
+
+    "createRealm": "Create Realm",
+
+    "jumpToSection": "Jump to section",
+
+    "Sunday": "Sunday",
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday"
+  }
+}

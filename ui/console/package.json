@@ -1,11 +1,11 @@
 {
   "name": "infinispan-operator-console",
   "version": "0.0.1",
-  "description": "An open source build scaffolding utility for web apps.",
+  "description": "Infinispan Operator Console",
   "main": "server.js",
   "repository": "",
   "homepage": "",
-  "license": "MIT",
+  "license": "ASF",
   "private": true,
   "scripts": {
     "prebuild": "npm run clean",
@@ -77,12 +77,16 @@
     "webpack-merge": "^5.2.0"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.63.3",
-    "@patternfly/react-icons": "^4.7.11",
-    "@patternfly/react-styles": "^4.7.8",
+    "@patternfly/patternfly": "^4.70.2",
+    "@patternfly/react-core": "^4.84.4",
+    "@patternfly/react-icons": "^4.7.22",
+    "@patternfly/react-table": "^4.19.45",
     "express": "^4.17.1",
+    "i18next": "^19.8.4",
+    "lodash": "^4.17.20",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-i18next": "^11.8.5",
     "react-router-last-location": "^2.0.1"
   }
 }

@@ -3,16 +3,17 @@ import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { Alert, PageSection } from '@patternfly/react-core';
 import { DynamicImport } from '@app/DynamicImport';
 import { accessibleRouteChangeHandler } from '@app/utils/utils';
-import { Dashboard } from '@app/Dashboard/Dashboard';
-import { GeneralSettings } from '@app/Settings/General/GeneralSettings';
-import { ProfileSettings } from '@app/Settings/Profile/ProfileSettings';
+import { ClustersPage } from '@app/Clusters/ClustersPage';
+import { Caches } from '@app/Entries/Caches/Caches';
+import { TBD } from '@app/Entries/TBD/TBD';
 import { NotFound } from '@app/NotFound/NotFound';
 import { useDocumentTitle } from '@app/utils/useDocumentTitle';
 import { LastLocationProvider, useLastLocation } from 'react-router-last-location';
+import { BackupRestore } from '@app/BackupRestore/BackupRestore';
 
 let routeFocusTimer: number;
 
-const getSupportModuleAsync = () => () => import(/* webpackChunkName: 'support' */ '@app/Support/Support');
+const getSupportModuleAsync = () => () => import(/* webpackChunkName: 'support' */ '@app/BackupRestore/BackupRestore');
 
 const Support = (routeProps: RouteComponentProps): React.ReactElement => {
   const lastNavigation = useLastLocation();
@@ -60,36 +61,36 @@ export type AppRouteConfig = IAppRoute | IAppRouteGroup;
 
 const routes: AppRouteConfig[] = [
   {
-    component: Dashboard,
+    component: ClustersPage,
     exact: true,
-    label: 'Dashboard',
+    label: 'Infinispan Clusters',
     path: '/',
-    title: 'PatternFly Seed | Main Dashboard',
+    title: 'Clusters',
   },
   {
-    component: Support,
+    component: BackupRestore,
     exact: true,
     isAsync: true,
-    label: 'Support',
-    path: '/support',
-    title: 'PatternFly Seed | Support Page',
+    label: 'Backup/Restore',
+    path: '/backup-restore',
+    title: 'Backup/Restore',
   },
   {
-    label: 'Settings',
+    label: 'Entries',
     routes: [
       {
-        component: GeneralSettings,
+        component: Caches,
         exact: true,
-        label: 'General',
-        path: '/settings/general',
-        title: 'PatternFly Seed | General Settings',
+        label: 'Caches',
+        path: '/entries/caches',
+        title: 'Caches',
       },
       {
-        component: ProfileSettings,
+        component: TBD,
         exact: true,
-        label: 'Profile',
-        path: '/settings/profile',
-        title: 'PatternFly Seed | Profile Settings',
+        label: 'TBD',
+        path: '/entries/tbd',
+        title: 'TBDs',
       },
     ],
   },
