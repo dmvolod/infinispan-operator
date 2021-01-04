@@ -8,21 +8,9 @@ class Utils {
    */
   public endpoint(): string {
     if (this.isDevMode()) {
-      if (!process.env.INFINISPAN_SERVER_URL) {
-        return 'http://localhost:8080/rest';
-      } else {
-        return process.env.INFINISPAN_SERVER_URL + '/rest';
-      }
+      return 'http://localhost:9001/rest';
     } else {
       return window.location.origin.toString() + '/rest';
-    }
-  }
-
-  public landing(): string {
-    if (this.isDevMode()) {
-      return 'http://localhost:9000/console/';
-    } else {
-      return window.location.origin.toString() + '/console';
     }
   }
 
