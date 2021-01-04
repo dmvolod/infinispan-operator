@@ -11,6 +11,12 @@ module.exports = (_req, res) => {
     "type": "Cache",
     "status": "UNKNOWN",
     "console": "http://www.example.com",
+  }, {
+    "name": "not-exposed-cluster",
+    "namespace": "default",
+    "type": "Cache",
+    "status": "UNKNOWN",
+    "console": "",
   },
   ]);
 }

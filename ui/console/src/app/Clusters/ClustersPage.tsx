@@ -35,15 +35,15 @@ export const ClustersPage = () => {
   return (
     <>
       <ViewHeader
-        titleKey="clients:clientList"
-        subKey="clients:clientsExplain"
+        titleKey="clusters:clusterList"
+        subKey="clusters:clustersExplain"
       />
       <PageSection variant="light">
         <ConsoleDataTable
           loader={loader}
           isPaginated
-          ariaLabelKey="clients:clientList"
-          searchPlaceholderKey="clients:searchForClient"
+          ariaLabelKey="clusters:clusterList"
+          searchPlaceholderKey="clusters:searchForCluster"
           toolbarItem={
             <>
             </>
@@ -51,38 +51,24 @@ export const ClustersPage = () => {
           columns={[
             {
               name: "clusterName",
-              displayKey: "clients:clientID",
+              displayKey: "clusters:clusterName",
             },
-            { name: "clusterNamespace", displayKey: "clients:type" },
-            /*
-            {
-              name: "description",
-              displayKey: "clients:description",
-              cellFormatters: [emptyFormatter()],
+            { name: "clusterNamespace",
+              displayKey: "clusters:clusterNamespace"
             },
             {
-              name: "baseUrl",
-              displayKey: "clients:homeURL",
+              name: "clusterType",
+              displayKey: "clusters:clusterType",
+            },
+            {
+              name: "clusterStatus",
+              displayKey: "clusters:clusterStatus",
+            },
+            {
+              name: "clusterConsoleUri",
+              displayKey: "clusters:clusterConsoleUri",
               cellFormatters: [externalLink(), emptyFormatter()],
-
-              cellRenderer: (client) => {
-                if (client.rootUrl) {
-                  if (
-                    !client.rootUrl.startsWith("http") ||
-                    client.rootUrl.indexOf("$") !== -1
-                  ) {
-                    client.rootUrl =
-                      client.rootUrl
-                        .replace("${authBaseUrl}", baseUrl)
-                        .replace("${authAdminUrl}", baseUrl) +
-                      (client.baseUrl ? client.baseUrl.substr(1) : "");
-                  }
-                }
-                return client.rootUrl;
-              },
-
             },
-             */
           ]}
         />
       </PageSection>
