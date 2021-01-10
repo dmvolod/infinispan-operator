@@ -13,6 +13,6 @@ GO_LDFLAGS="-w -X github.com/infinispan/infinispan-operator/version.Version=${VE
 echo "building ${BIN_FILE_NAME}... version ${VERSION}"
 rm -f "${BIN_DIR}"/"${BIN_FILE_NAME}"
 GOOS=${GOOS} GOARCH=amd64 CGO_ENABLED=0 go build -o "${BIN_DIR}"/"${BIN_FILE_NAME}" -ldflags "${GO_LDFLAGS}" "${BUILD_PATH}"
-#npm install --prefix ui/console/
-#npm run build --prefix ui/console/
+npm install --prefix ui/console/
+npm run build --prefix ui/console/
 rice append  -i ./pkg/ui/console/ --exec "${BIN_DIR}"/"${BIN_FILE_NAME}" --verbose
